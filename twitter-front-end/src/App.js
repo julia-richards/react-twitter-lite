@@ -13,7 +13,9 @@ function App() {
     <div>
       <h1>Twitter Lite</h1>
       <nav>
-        <NavLink to="/">Home</NavLink>
+        <NavLink exact to="/">
+          Home
+        </NavLink>
         <NavLink to="/register">Register</NavLink>
         <NavLink to="/login">Login</NavLink>
       </nav>

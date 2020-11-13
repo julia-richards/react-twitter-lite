@@ -1,13 +1,27 @@
 import React from "react";
+import { NavLink, Switch, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import LoginForm from "./components/session/LoginForm";
 import RegistrationForm from "./components/session/RegistrationForm";
 
 function App() {
-  return (
-    <div>
-      <h1>Twitter Lite</h1>
-      <RegistrationForm />
-    </div>
-  );
+	return (
+		<div>
+			<h1>Twitter Lite</h1>
+			<nav>
+				<NavLink to="/">Home</NavLink>
+				<NavLink to="/register">Register</NavLink>
+				<NavLink to="/login">Login</NavLink>
+			</nav>
+			<Switch>
+				<Route path="/register" component={RegistrationForm} />
+				<Route path="/login" component={LoginForm} />
+				<Route path="/users/:userId" component={Profile} />
+				<Route path="/" component={Home} />
+			</Switch>
+		</div>
+	);
 }
 
 export default App;
